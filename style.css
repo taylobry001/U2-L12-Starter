@@ -1,17 +1,10 @@
-/* ============================================================
-   U2 L12 practice: Flexbox
-   Everything above the line at the bottom is already written:
-   the reset, a palette, the page, the link states, and what each
-   part LOOKS like. Where each part SITS is today's job, and
-   those rules go BELOW that line.
-   ============================================================ */
 
 * { box-sizing: border-box; }
 
 :root {
   --dark:       #2b2d42;   /* headings, the hero */
   --light:      #edf2f4;   /* cards, hovered links */
-  --background: #ffffff;   /* the page */
+  --background: #c4c4c4;   /* the page */
   --accent:     #d1495b;   /* hovered text */
   --text:       #222222;
   --line:       #c9ced6;
@@ -29,7 +22,7 @@ body {
 
 h1, h2, h3 { color: var(--dark); line-height: 1.2; }
 
-/* the four link states, in LVHA order, from Lesson 6 */
+
 a:link    { color: var(--dark); }
 a:visited { color: #5b4a7a; }
 a:hover   { color: var(--accent); }
@@ -42,7 +35,7 @@ header {
   .logo { margin: 0; font-size: 1.5rem; font-weight: 700; }
 }
 
-/* Lesson 11, step 1: no markers, and every link is a block */
+
 nav {
   ul { list-style-type: none; margin: 0; padding: 0; }
   a  { display: block; padding: .5rem .75rem; text-decoration: none; font-weight: 600; }
@@ -50,6 +43,9 @@ nav {
 }
 
 .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 14rem;
   margin: 1.5rem 0;
   background-color: var(--dark);
@@ -58,21 +54,46 @@ nav {
   h1, p { margin: 0 0 .5rem; color: #ffffff; }
 }
 
-.card {;
+
+.card {
+  margin-top: auto;
   padding: 1rem;
   background-color: var(--light);
   border: 1px solid var(--line);
   h3 { margin-top: 0; }
+  a{margin-top: auto;}
+  .cards{flex: 1 1 12rem;
+    display: flex; flex-direction: column;}
 }
+
 
 .feature img { display: block; max-width: 100%; height: auto; }
 
-footer {
-  border-top: 1px solid var(--line);
-  margin-top: 2rem;
-  font-size: .9rem;
-}
+
 
 /* ============================================================
    YOUR RULES GO BELOW THIS LINE
    ============================================================ */
+.cards{
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+
+}
+
+.feature{
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  .words{flex: 1}
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+  font-size: .9rem;
+}
+img{
+  width: 40%;
+}
